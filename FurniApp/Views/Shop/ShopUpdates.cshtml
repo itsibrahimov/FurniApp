@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Shop
+@{
+    ViewBag.Title = "ShopUpdate";
+    Layout = "~/Views/Shared/_AddminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @Html.Label("Ürün Başlığı")
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.ProductPrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim Yolu")
+    @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
+

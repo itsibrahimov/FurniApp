@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EntityLayer.Shop>
+@{
+    ViewBag.Title = "AdminShopList";
+    Layout = "~/Views/Shared/_AddminLayout.cshtml";
+}
+<h2>AdminShopList</h2>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Görsel</th>
+        <th>Fiyat</th>
+        <th>Durum</th>
+        <th>Güncelle</th>
+        <th>PAsif Yap</th>
+        <th>Akivleştir</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+
+
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.ProductName</td>
+            <td>@item.ProductImage</td>
+            <td>@item.ProductPrice</td>
+            <td>@item.ProductStatus</td>
+
+
+
+            <td><a href="/Shop/ShopUpdates/@item.ProductID/" class=" btn btn-success">Güncelle</a></td>
+            <td><a href="/Shop/ShopDelete/@item.ProductID/" class=" btn btn-danger">Pasif</a></td>
+            <td>
+                <a class="btn btn-outline-secondary btn-sm" href="/Shop/ShopStatusTrue/@item.ProductID">
+
+
+                    <i class="fas fa-atom">
+                    </i>
+                    Aktif Yap
+
+                </a>
+        </tr>
+        }
+    </table>
+<a href="/Shop/AddNewShop/" class="btn btn-primary">Yeni Ürün Ekle</a>
